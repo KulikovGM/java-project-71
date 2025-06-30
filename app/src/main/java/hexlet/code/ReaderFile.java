@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 
 public class ReaderFile {
 
-    public static void main(String[] args) throws Exception {
+    public static void reading() throws Exception {
 
         // Чтение файла:
         // Получаем путь к нужному файлу

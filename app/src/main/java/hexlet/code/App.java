@@ -29,6 +29,10 @@ public class App implements Runnable {
 
     @Override
     public void run() {
-
+        try {
+            ReaderFile.reading();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
