@@ -30,7 +30,7 @@ public class App implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
         ReaderAndDiffer.readAndDiff(filepath1, filepath2);
-        //System.out.println(ReaderFile.reading(filepath1, filepath2, format));
+        //System.out.println(ReaderFile.readAndDiff(filepath1, filepath2, format));
         return 0;
     }
 }
