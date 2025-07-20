@@ -6,6 +6,14 @@ plugins {
     id("org.sonarqube") version "6.2.0.5505"
 }
 
+sonar {
+    properties {
+        property("sonar.projectKey", "KulikovGM_java-project-71")
+        property("sonar.organization", "kulikovgm")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
+}
+
 application {
     mainClass = "hexlet.code.App"
 }
@@ -32,10 +40,3 @@ tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
 }
 
-sonar {
-    properties {
-        property("sonar.projectKey", "KulikovGM_java-project-71")
-        property("sonar.organization", "kulikovgm")
-        property("sonar.host.url", "https://sonarcloud.io")
-    }
-}
