@@ -18,7 +18,7 @@ import java.util.TreeSet;
 
 public class ReaderAndDiffer {
 
-    public static void readAndDiff(String filePath1, String filePath2) throws Exception {
+    public static String readAndDiff(String filePath1, String filePath2) throws Exception {
 
         // Формируем абсолютный путь
         Path path1 = Paths.get(filePath1).toAbsolutePath().normalize();
@@ -31,13 +31,16 @@ public class ReaderAndDiffer {
         ObjectMapper mapper = new ObjectMapper();
         Map<String, Object> mappedFile1 = new HashMap<>();
         Map<String, Object> mappedFile2 = new HashMap<>();
-        mappedFile1 = mapper.readValue(new File(filePath1), new TypeReference<>() { });
-        mappedFile2 = mapper.readValue(new File(filePath2), new TypeReference<>() { });
+        mappedFile1 = mapper.readValue(new File(filePath1), new TypeReference<>() {
+        });
+        mappedFile2 = mapper.readValue(new File(filePath2), new TypeReference<>() {
+        });
         // Compare
         List<Map<String, Object>> compareResult = differ(mappedFile1, mappedFile2);
 
-        System.out.println(Stylish.formatStylish(compareResult));
+        return (Stylish.formatStylish(compareResult));
     }
+
     public static List<Map<String, Object>> differ(Map<String, Object> mappedFile1, Map<String, Object> mappedFile2) {
         List<Map<String, Object>> result = new ArrayList<>();
         Set<String> keysSet = new TreeSet<>(mappedFile1.keySet());
@@ -85,11 +88,9 @@ public class ReaderAndDiffer {
                                 .append(diffs.get("newValue")).append("\n");
                     }
                 }
-
             }
             result.append("}");
             return result.toString();
         }
     }
-
 }

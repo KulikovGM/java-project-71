@@ -4,6 +4,7 @@ import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
+
 import java.util.concurrent.Callable;
 
 @Command(name = "gendiff", mixinStandardHelpOptions = true,
@@ -27,9 +28,10 @@ public class App implements Callable<Integer> {
         System.exit(exitCode);
 
     }
+
     @Override
     public Integer call() throws Exception {
-        ReaderAndDiffer.readAndDiff(filepath1, filepath2);
+        System.out.println(ReaderAndDiffer.readAndDiff(filepath1, filepath2));
         //System.out.println(ReaderFile.readAndDiff(filepath1, filepath2, format));
         return 0;
     }
