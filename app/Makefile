@@ -9,3 +9,24 @@ install:
 
 run-dist:
 		./build/install/app/bin/app
+
+run:
+	./gradlew run
+
+test:
+	./gradlew test
+
+report:
+	./gradlew jacocoTestReport
+
+lint:
+	./gradlew checkstyleMain
+
+update-deps:
+	./gradlew refreshVersions
+	# ./gradlew dependencyUpdates -Drevision=release
+
+
+build-run: build run
+
+.PHONY: build
