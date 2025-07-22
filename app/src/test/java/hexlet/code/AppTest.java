@@ -27,4 +27,28 @@ public class AppTest {
             throw new RuntimeException(e);
         }
     }
+
+    String pathY1 = "src/test/resources/file1.json";
+    String pathY2 = "src/test/resources/file2.json";
+
+    private final String expectedYmlString =
+            """
+                    {
+                      - follow: false
+                        host: hexlet.io
+                      - proxy: 123.234.53.22
+                      - timeout: 50
+                      + timeout: 20
+                      + verbose: true
+                    }""";
+
+    @Test
+    public void testYml() {
+        try {
+            assertEquals(expectedYmlString, ReaderAndDiffer.readAndDiff(pathY1, pathY2));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
