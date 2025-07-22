@@ -6,10 +6,9 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
+
 
 public class Parser {
     public static Map<String, Object> parsing(String path) throws IOException {
@@ -23,7 +22,8 @@ public class Parser {
         }
 
         Map<String, Object> mappedFile1 = new HashMap<>();
-        mappedFile1 = mapper.readValue(new File(String.valueOf(path)), new TypeReference<>() {});
+        mappedFile1 = mapper.readValue(new File(String.valueOf(path)), new TypeReference<>() {
+        });
         return mappedFile1;
     }
 
