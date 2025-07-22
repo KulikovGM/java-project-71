@@ -30,8 +30,8 @@ public class ReaderAndDiffer {
         // Mapping
         ObjectMapper mapper = new ObjectMapper();
 
-        Map<String, Object> mappedFile1 = Parser.parsing(path1);
-        Map<String, Object> mappedFile2 = Parser.parsing(path2);
+        Map<String, Object> mappedFile1 = Parser.parsing(filePath1);
+        Map<String, Object> mappedFile2 = Parser.parsing(filePath2);
 
         // Compare
         List<Map<String, Object>> compareResult = differ(mappedFile1, mappedFile2);
