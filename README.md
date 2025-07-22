@@ -8,4 +8,7 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=KulikovGM_java-project-71&metric=coverage)](https://sonarcloud.io/summary/new_code?id=KulikovGM_java-project-71)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=KulikovGM_java-project-71&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=KulikovGM_java-project-71)
 
+Difference file format .json
 [![asciicast](https://asciinema.org/a/ZvHomQEDT3YsU56WvDgDtM0kp.svg)](https://asciinema.org/a/ZvHomQEDT3YsU56WvDgDtM0kp)
+Difference file format .json and .yml
+[![asciicast](https://asciinema.org/a/E9Dfdca05MVavC5P6wp1XKUfN.svg)](https://asciinema.org/a/E9Dfdca05MVavC5P6wp1XKUfN)
