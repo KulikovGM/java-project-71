@@ -29,12 +29,10 @@ public class ReaderAndDiffer {
         }
         // Mapping
         ObjectMapper mapper = new ObjectMapper();
-        Map<String, Object> mappedFile1 = new HashMap<>();
-        Map<String, Object> mappedFile2 = new HashMap<>();
-        mappedFile1 = mapper.readValue(new File(filePath1), new TypeReference<>() {
-        });
-        mappedFile2 = mapper.readValue(new File(filePath2), new TypeReference<>() {
-        });
+
+        Map<String, Object> mappedFile1 = Parser.parsing(path1);
+        Map<String, Object> mappedFile2 = Parser.parsing(path2);
+
         // Compare
         List<Map<String, Object>> compareResult = differ(mappedFile1, mappedFile2);
 
