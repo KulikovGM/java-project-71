@@ -12,3 +12,4 @@ Difference file format .json
 [![asciicast](https://asciinema.org/a/ZvHomQEDT3YsU56WvDgDtM0kp.svg)](https://asciinema.org/a/ZvHomQEDT3YsU56WvDgDtM0kp)
 Difference file format .json and .yml
 [![asciicast](https://asciinema.org/a/E9Dfdca05MVavC5P6wp1XKUfN.svg)](https://asciinema.org/a/E9Dfdca05MVavC5P6wp1XKUfN)
+[![asciicast](https://asciinema.org/a/4WPT0QOw2VlFk9T3gODI6p0Qi.svg)](https://asciinema.org/a/4WPT0QOw2VlFk9T3gODI6p0Qi)
