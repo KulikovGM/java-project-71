@@ -12,8 +12,8 @@ import java.util.concurrent.Callable;
 
 public class App implements Callable<Integer> {
 
-    @Option(names = {"-f", "--format"}, description = "output format [default: stylish]")
-    String format = "stylish";
+    @Option(names = {"-f", "--format"}, defaultValue = "stylish", description = "output format [default: stylish]")
+    String format;
 
     @Parameters(paramLabel = "filepath1", defaultValue = "filepath1",
             description = "path to first file")
@@ -31,8 +31,7 @@ public class App implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        System.out.println(ReaderAndDiffer.readAndDiff(filepath1, filepath2));
-        //System.out.println(ReaderFile.readAndDiff(filepath1, filepath2, format));
+        System.out.println(ReaderAndDiffer.readAndDiff(filepath1, filepath2, format));
         return 0;
     }
 }

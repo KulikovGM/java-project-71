@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -14,6 +15,9 @@ import java.util.TreeSet;
 public class ReaderAndDiffer {
 
     public static String readAndDiff(String filePath1, String filePath2) throws Exception {
+        return readAndDiff(filePath1, filePath2, "stylish");
+    }
+    public static String readAndDiff(String filePath1, String filePath2, String format) throws Exception {
 
         // Формируем абсолютный путь
         Path path1 = Paths.get(filePath1).toAbsolutePath().normalize();
@@ -30,7 +34,7 @@ public class ReaderAndDiffer {
         // Compare
         List<Map<String, Object>> compareResult = differ(mappedFile1, mappedFile2);
 
-        return (Stylish.formatStylish(compareResult));
+        return (Stylish.formatter(compareResult, format));
     }
 
     public static List<Map<String, Object>> differ(Map<String, Object> mappedFile1, Map<String, Object> mappedFile2) {
@@ -63,6 +67,18 @@ public class ReaderAndDiffer {
     }
 
     public static class Stylish {
+        public static String formatter(List<Map<String, Object>> differences,String format) throws IOException {
+                switch (format) {
+                    case "stylish":
+                        return Stylish.formatStylish(differences);
+                    case "newFormat":
+                        return Stylish.formatStylish(differences); // NewFormat
+                    default:
+                        System.out.println("Format" + format + "is not correct!");
+                }
+                return Stylish.formatStylish(differences);
+        }
+
         public static String formatStylish(List<Map<String, Object>> differences) {
             StringBuilder result = new StringBuilder("{\n");
             for (Map<String, Object> diffs : differences) {

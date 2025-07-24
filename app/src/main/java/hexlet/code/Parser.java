@@ -22,7 +22,7 @@ public class Parser {
         }
 
         Map<String, Object> mappedFile1 = new HashMap<>();
-        mappedFile1 = mapper.readValue(new File(String.valueOf(path)), new TypeReference<>() {
+        mappedFile1 = mapper.readValue(new File(path), new TypeReference<>() {
         });
         return mappedFile1;
     }
