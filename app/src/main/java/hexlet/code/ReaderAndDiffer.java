@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -17,6 +16,7 @@ public class ReaderAndDiffer {
     public static String readAndDiff(String filePath1, String filePath2) throws Exception {
         return readAndDiff(filePath1, filePath2, "stylish");
     }
+
     public static String readAndDiff(String filePath1, String filePath2, String format) throws Exception {
 
         // Формируем абсолютный путь
@@ -67,16 +67,16 @@ public class ReaderAndDiffer {
     }
 
     public static class Stylish {
-        public static String formatter(List<Map<String, Object>> differences,String format) throws IOException {
-                switch (format) {
-                    case "stylish":
-                        return Stylish.formatStylish(differences);
-                    case "newFormat":
-                        return Stylish.formatStylish(differences); // NewFormat
-                    default:
-                        System.out.println("Format" + format + "is not correct!");
-                }
-                return Stylish.formatStylish(differences);
+        public static String formatter(List<Map<String, Object>> differences, String format) {
+            switch (format) {
+                case "stylish":
+                    return Stylish.formatStylish(differences);
+                case "newFormat":
+                    return Stylish.formatStylish(differences); // NewFormat
+                default:
+                    System.out.println("Format" + format + "is not correct!");
+            }
+            return Stylish.formatStylish(differences);
         }
 
         public static String formatStylish(List<Map<String, Object>> differences) {
