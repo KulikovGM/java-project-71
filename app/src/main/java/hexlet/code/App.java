@@ -13,7 +13,7 @@ import java.util.concurrent.Callable;
 public class App implements Callable<Integer> {
 
     @Option(names = {"-f", "--format"}, defaultValue = "stylish", description = "output format [default: stylish]")
-    String format;
+    private String format;
 
     @Parameters(paramLabel = "filepath1", defaultValue = "filepath1",
             description = "path to first file")
