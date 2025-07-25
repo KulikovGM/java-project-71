@@ -21,7 +21,7 @@ public class AppTest {
     @Test
     public void testJson1() {
         try {
-            assertEquals(expectedString, ReaderAndDiffer.readAndDiff(path1, path2));
+            assertEquals(expectedString, Differ.generate(path1, path2));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -43,7 +43,7 @@ public class AppTest {
     @Test
     public void testYml1() {
         try {
-            assertEquals(expectedYmlString, ReaderAndDiffer.readAndDiff(pathY1, pathY2));
+            assertEquals(expectedYmlString, Differ.generate(pathY1, pathY2));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -83,7 +83,7 @@ public class AppTest {
     @Test
     public void testJson2() {
         try {
-            assertEquals(expected, ReaderAndDiffer.readAndDiff(path3, path4));
+            assertEquals(expected, Differ.generate(path3, path4));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -122,7 +122,7 @@ public class AppTest {
     @Test
     public void testYml2() {
         try {
-            assertEquals(expectedYml2, ReaderAndDiffer.readAndDiff(pathY3, pathY4));
+            assertEquals(expectedYml2, Differ.generate(pathY3, pathY4));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import hexlet.code.formatter.Stylish;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,13 +13,13 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class ReaderAndDiffer {
+public class Differ {
 
-    public static String readAndDiff(String filePath1, String filePath2) throws Exception {
-        return readAndDiff(filePath1, filePath2, "stylish");
+    public static String generate(String filePath1, String filePath2) throws Exception {
+        return generate(filePath1, filePath2, "stylish");
     }
 
-    public static String readAndDiff(String filePath1, String filePath2, String format) throws Exception {
+    public static String generate(String filePath1, String filePath2, String format) throws Exception {
 
         // Формируем абсолютный путь
         Path path1 = Paths.get(filePath1).toAbsolutePath().normalize();
@@ -34,7 +36,7 @@ public class ReaderAndDiffer {
         // Compare
         List<Map<String, Object>> compareResult = differ(mappedFile1, mappedFile2);
 
-        return (Stylish.formatter(compareResult, format));
+        return (Formatter.formatter(compareResult, format));
     }
 
     public static List<Map<String, Object>> differ(Map<String, Object> mappedFile1, Map<String, Object> mappedFile2) {
@@ -66,7 +68,7 @@ public class ReaderAndDiffer {
         return result;
     }
 
-    public static class Stylish {
+    public static class Formatter {
         public static String formatter(List<Map<String, Object>> differences, String format) {
             switch (format) {
                 case "stylish":
@@ -77,28 +79,6 @@ public class ReaderAndDiffer {
                     System.out.println("Format" + format + "is not correct!");
             }
             return Stylish.formatStylish(differences);
-        }
-
-        public static String formatStylish(List<Map<String, Object>> differences) {
-            StringBuilder result = new StringBuilder("{\n");
-            for (Map<String, Object> diffs : differences) {
-                switch (diffs.get("status").toString()) {
-                    case "removed" -> result.append("  - ").append(diffs.get("key")).append(": ")
-                            .append(diffs.get("oldValue")).append("\n");
-                    case "added" -> result.append("  + ").append(diffs.get("key")).append(": ")
-                            .append(diffs.get("newValue")).append("\n");
-                    case "unchanged" -> result.append("    ").append(diffs.get("key")).append(": ")
-                            .append(diffs.get("oldValue")).append("\n");
-                    default -> {
-                        result.append("  - ").append(diffs.get("key")).append(": ")
-                                .append(diffs.get("oldValue")).append("\n");
-                        result.append("  + ").append(diffs.get("key")).append(": ")
-                                .append(diffs.get("newValue")).append("\n");
-                    }
-                }
-            }
-            result.append("}");
-            return result.toString();
         }
     }
 }
