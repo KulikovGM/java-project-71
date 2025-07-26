@@ -1,6 +1,7 @@
 package hexlet.code;
 
-import hexlet.code.formatter.Stylish;
+import hexlet.code.formatters.Plain;
+import hexlet.code.formatters.Stylish;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -72,13 +73,13 @@ public class Differ {
         public static String formatter(List<Map<String, Object>> differences, String format) {
             switch (format) {
                 case "stylish":
-                    return Stylish.formatStylish(differences);
-                case "newFormat":
-                    return Stylish.formatStylish(differences); // NewFormat
+                    return Stylish.format(differences);
+                case "plain":
+                    return Plain.format(differences); // NewFormat
                 default:
                     System.out.println("Format" + format + "is not correct!");
             }
-            return Stylish.formatStylish(differences);
+            return Stylish.format(differences);
         }
     }
 }
