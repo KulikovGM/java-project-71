@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.formatters.Json;
 import hexlet.code.formatters.Plain;
 import hexlet.code.formatters.Stylish;
 
@@ -75,7 +76,9 @@ public class Differ {
                 case "stylish":
                     return Stylish.format(differences);
                 case "plain":
-                    return Plain.format(differences); // NewFormat
+                    return Plain.format(differences);
+                case "json":
+                    return Json.format(differences); // NewFormat JSON ->
                 default:
                     System.out.println("Format" + format + "is not correct!");
             }
