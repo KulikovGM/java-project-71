@@ -4,6 +4,7 @@ import hexlet.code.formatters.Json;
 import hexlet.code.formatters.Plain;
 import hexlet.code.formatters.Stylish;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -71,7 +72,7 @@ public class Differ {
     }
 
     public static class Formatter {
-        public static String formatter(List<Map<String, Object>> differences, String format) {
+        public static String formatter(List<Map<String, Object>> differences, String format) throws IOException {
             switch (format) {
                 case "stylish":
                     return Stylish.format(differences);

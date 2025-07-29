@@ -155,21 +155,7 @@ public class AppTest {
     }
     private final String expectedYml2Json =
             """
-                    
-                     Property 'chars2' was updated. From [complex value] to false
-                     Property 'checked' was updated. From false to true
-                     Property 'default' was updated. From null to [complex value]
-                     Property 'id' was updated. From 45 to null
-                     Property 'key1' was removed
-                     Property 'key2' was added with value: 'value2'
-                     Property 'numbers2' was updated. From [complex value] to [complex value]
-                     Property 'numbers3' was removed
-                     Property 'numbers4' was added with value: [complex value]
-                     Property 'obj1' was added with value: [complex value]
-                     Property 'setting1' was updated. From 'Some value' to 'Another value'
-                     Property 'setting2' was updated. From 200 to 300
-                     Property 'setting3' was updated. From true to 'none'
-                     """;
+                    [{"key":"chars1","oldValue":["a","b","c"],"status":"unchanged"},{"key":"chars2","oldValue":["d","e","f"],"newValue":false,"status":"updated"},{"key":"checked","oldValue":false,"newValue":true,"status":"updated"},{"key":"default","oldValue":null,"newValue":["value1","value2"],"status":"updated"},{"key":"id","oldValue":45,"newValue":null,"status":"updated"},{"key":"key1","oldValue":"value1","status":"removed"},{"key":"key2","newValue":"value2","status":"added"},{"key":"numbers1","oldValue":[1,2,3,4],"status":"unchanged"},{"key":"numbers2","oldValue":[2,3,4,5],"newValue":[22,33,44,55],"status":"updated"},{"key":"numbers3","oldValue":[3,4,5],"status":"removed"},{"key":"numbers4","newValue":[4,5,6],"status":"added"},{"key":"obj1","newValue":{"nestedKey":"value","isNested":true},"status":"added"},{"key":"setting1","oldValue":"Some value","newValue":"Another value","status":"updated"},{"key":"setting2","oldValue":200,"newValue":300,"status":"updated"},{"key":"setting3","oldValue":true,"newValue":"none","status":"updated"}]""";
 
     @Test
     public void testYml2Json() {
