@@ -13,5 +13,7 @@ Difference file (.json)
 Difference file (.json and .yml)
 [![asciicast](https://asciinema.org/a/E9Dfdca05MVavC5P6wp1XKUfN.svg)](https://asciinema.org/a/E9Dfdca05MVavC5P6wp1XKUfN)
 [![asciicast](https://asciinema.org/a/4WPT0QOw2VlFk9T3gODI6p0Qi.svg)](https://asciinema.org/a/4WPT0QOw2VlFk9T3gODI6p0Qi)
-Difference file format plain (.yml)
+Difference file format plain
 [![asciicast](https://asciinema.org/a/jJCM61UzwB6biEX1dM20sJZeP.svg)](https://asciinema.org/a/jJCM61UzwB6biEX1dM20sJZeP)
+Difference file format json
+[![asciicast](https://asciinema.org/a/K7P0DRvmUXv4OPvsG5lXd73HJ.svg)](https://asciinema.org/a/K7P0DRvmUXv4OPvsG5lXd73HJ)
