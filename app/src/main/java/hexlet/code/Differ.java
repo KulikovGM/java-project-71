@@ -32,12 +32,10 @@ public class Differ {
         if (!Files.exists(path1) || !Files.exists(path2)) {
             throw new Exception("File '" + path1 + "' or/and File '" + path2 + "' does not exist");
         }
-        // Mapping
 
         Map<String, Object> mappedFile1 = Parser.parsing(filePath1);
         Map<String, Object> mappedFile2 = Parser.parsing(filePath2);
 
-        // Compare
         List<Map<String, Object>> compareResult = differ(mappedFile1, mappedFile2);
 
         return (Formatter.formatter(compareResult, format));
