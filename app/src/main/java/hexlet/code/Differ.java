@@ -16,6 +16,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
+@SuppressWarnings("java:S118")
 public class Differ {
 
     public static String generate(String filePath1, String filePath2) throws Exception {
