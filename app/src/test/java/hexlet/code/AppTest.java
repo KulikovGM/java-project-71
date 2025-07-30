@@ -129,7 +129,6 @@ public class AppTest {
     }
     private final String expectedYml2Plain =
             """
-                    
                      Property 'chars2' was updated. From [complex value] to false
                      Property 'checked' was updated. From false to true
                      Property 'default' was updated. From null to [complex value]

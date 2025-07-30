@@ -21,7 +21,7 @@ public class Plain {
                 }
             }
         }
-        return result.toString();
+        return result.toString().trim();
     }
 
     public static String getComplexValue(Object value) {
