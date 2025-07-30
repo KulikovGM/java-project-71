@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AppTest {
-    String path1 = "src/test/resources/file1.json";
-    String path2 = "src/test/resources/file2.json";
+    private final String path1 = "src/test/resources/file1.json";
+    private final String path2 = "src/test/resources/file2.json";
     private final String expectedString =
             """
                     {
@@ -27,8 +27,8 @@ public class AppTest {
         }
     }
 
-    String pathY1 = "src/test/resources/fileYml1.yml";
-    String pathY2 = "src/test/resources/fileYml2.yml";
+    private final String pathY1 = "src/test/resources/fileYml1.yml";
+    private final String pathY2 = "src/test/resources/fileYml2.yml";
     private final String expectedYmlString =
             """
                     {
@@ -49,8 +49,8 @@ public class AppTest {
         }
     }
 
-    String path3 = "src/test/resources/file3.json";
-    String path4 = "src/test/resources/file4.json";
+    private final String path3 = "src/test/resources/file3.json";
+    private final String path4 = "src/test/resources/file4.json";
 
     private final String expected =
             """
@@ -89,8 +89,8 @@ public class AppTest {
         }
     }
 
-    String pathY3 = "src/test/resources/fileYml3.yml";
-    String pathY4 = "src/test/resources/fileYml4.yml";
+    private final String pathY3 = "src/test/resources/fileYml3.yml";
+    private final String pathY4 = "src/test/resources/fileYml4.yml";
     private final String expectedYml2 =
             """
                     {
@@ -141,8 +141,7 @@ public class AppTest {
                      Property 'obj1' was added with value: [complex value]
                      Property 'setting1' was updated. From 'Some value' to 'Another value'
                      Property 'setting2' was updated. From 200 to 300
-                     Property 'setting3' was updated. From true to 'none'
-                     """;
+                     Property 'setting3' was updated. From true to 'none'""";
 
     @Test
     public void testYml2Plain() {

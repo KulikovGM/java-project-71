@@ -27,10 +27,10 @@ public class Plain {
     public static String getComplexValue(Object value) {
         if (value == null) {
             return null;
-        } else if (value instanceof Object[] || value instanceof Collection<?> || value instanceof Map<?,?>) {
+        } else if (value instanceof Object[] || value instanceof Collection<?> || value instanceof Map<?, ?>) {
             return "[complex value]";
         } else if (value instanceof String) {
             return ("'" + value + "'");
-        } else return value.toString();
+        } else {return value.toString();}
     }
 }
