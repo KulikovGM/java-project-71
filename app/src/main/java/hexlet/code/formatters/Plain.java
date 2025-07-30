@@ -31,6 +31,8 @@ public class Plain {
             return "[complex value]";
         } else if (value instanceof String) {
             return ("'" + value + "'");
-        } else {return value.toString();}
+        } else {
+            return value.toString();
+        }
     }
 }
