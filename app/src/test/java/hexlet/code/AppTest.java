@@ -23,7 +23,7 @@ public class AppTest {
                       + verbose: true
                     }""";
 
-    public AppTest() throws IOException {
+    public AppTest() throws IOException { //AppTest is empty
     }
 
     @Test

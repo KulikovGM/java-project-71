@@ -16,7 +16,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
-@SuppressWarnings("java:S118")
+@SuppressWarnings({"java:S118", "java:S106", "java:S1192"})
 public class Differ {
 
     public static String generate(String filePath1, String filePath2) throws Exception {

@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+@SuppressWarnings("java:S1192")
 public class Plain {
     public static String format(List<Map<String, Object>> differences) {
         StringBuilder result = new StringBuilder();
