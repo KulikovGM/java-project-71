@@ -19,7 +19,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Execute Gradle build
-        run: ./gradlew build
+        run: cd app && ./gradlew build
       - name: Generate coverage report
         run: make report
       - name: Cache SonarQube packages
@@ -31,7 +31,7 @@ jobs:
       - name: Cache Gradle packages
         uses: actions/cache@v4
         with:
-          path: ~/.gradle/caches
+          path: ~/app/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
       - name: Build and analyze
