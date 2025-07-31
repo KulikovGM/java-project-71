@@ -1,5 +1,6 @@
 plugins {
     application
+    jacoco
     id("java")
     id("com.github.ben-manes.versions") version "0.52.0"
     checkstyle
@@ -35,6 +36,10 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.jacocoTestReport {
+    reports { xml.required.set(true) }
 }
 
 tasks.getByName("run", JavaExec::class) {
