@@ -11,20 +11,21 @@ import java.util.Map;
 
 
 public class Parser {
-    public static Map<String, Object> parsing(String path) throws IOException {
+
+    public static Map<String, Object> parsing(String data, String format) throws IOException {
         ObjectMapper mapper;
-        if (path.toLowerCase().endsWith(".json")) {
+        if (format.equals("json")) {
             mapper = new ObjectMapper();
-        } else if (path.toLowerCase().endsWith(".yml")) {
+        } else if (format.equals("yml")) {
             mapper = new YAMLMapper();
         } else {
-            throw new IOException("Unknown file format");
+            throw new IOException("Unknown format");
         }
 
-        Map<String, Object> mappedFile1 = new HashMap<>();
-        mappedFile1 = mapper.readValue(new File(path), new TypeReference<>() {
+        Map<String, Object> mappedData = new HashMap<>();
+        mappedData = mapper.readValue(new File(data), new TypeReference<>() {
         });
-        return mappedFile1;
+        return mappedData;
     }
 
 }
