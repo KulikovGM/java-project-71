@@ -15,11 +15,13 @@ public class Plain {
                 case "added" -> result.append("Property '").append(diffs.get("key"))
                         .append("' was added with value: ")
                         .append(getComplexValue(diffs.get("newValue"))).append("\n");
-                case "updated" -> result.append("Property '").append(diffs.get("key")).append("' was updated. From ")
-                        .append(getComplexValue(diffs.get("oldValue"))).append(" to ")
-                        .append(getComplexValue(diffs.get("newValue"))).append("\n");
-                default -> { throw new RuntimeException("Unknown type: '" + diffs.get("status").toString() + "'");
+                case "updated" -> {
+                    result.append("Property '").append(diffs.get("key")).append("' was updated. From ")
+                            .append(getComplexValue(diffs.get("oldValue"))).append(" to ")
+                            .append(getComplexValue(diffs.get("newValue"))).append("\n");
+                    break;
                 }
+                default -> result.append("");
             }
         }
         return result.toString().trim();
