@@ -18,7 +18,7 @@ public class Plain {
                 case "updated" -> result.append("Property '").append(diffs.get("key")).append("' was updated. From ")
                         .append(getComplexValue(diffs.get("oldValue"))).append(" to ")
                         .append(getComplexValue(diffs.get("newValue"))).append("\n");
-                default -> {
+                default -> { throw new RuntimeException("Unknown type: '" + diffs.get("status").toString() + "'");
                 }
             }
         }

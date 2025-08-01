@@ -10,6 +10,10 @@ import java.util.TreeSet;
 
 public class Difference {
 
+    private Difference() {
+        throw new IllegalStateException("Utility class Difference");
+    }
+
     public static List<Map<String, Object>> diff(Map<String, Object> mappedFile1, Map<String, Object> mappedFile2) {
         List<Map<String, Object>> result = new ArrayList<>();
         Set<String> keysSet = new TreeSet<>(mappedFile1.keySet());
