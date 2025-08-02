@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings({"java:S118", "java:S106", "java:S1192"})
-public class Differ {
+public final class Differ {
 
     private Differ() {
         throw new IllegalStateException("Utility class Differ");

@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Difference {
+public final class Difference {
 
     private Difference() {
         throw new IllegalStateException("Utility class Difference");

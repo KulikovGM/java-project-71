@@ -21,7 +21,7 @@ public class Plain {
                             .append(getComplexValue(diffs.get("newValue"))).append("\n");
                     break;
                 }
-                default -> result.append("");
+                default -> result.append(""); // Add case: 'unchanged' and default: exception
             }
         }
         return result.toString().trim();
