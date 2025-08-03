@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+@SuppressWarnings("java:S1192")
 public final class Plain {
     private Plain() {
         throw new IllegalStateException("Utility class");
@@ -23,7 +24,6 @@ public final class Plain {
                     result.append("Property '").append(diffs.get("key")).append("' was updated. From ")
                             .append(getComplexValue(diffs.get("oldValue"))).append(" to ")
                             .append(getComplexValue(diffs.get("newValue"))).append("\n");
-                    break;
                 }
                 case "unchanged" -> result.append("");
                 default -> throw new IOException("Unknown format '" + diffs.get("status").toString() + "'");
