@@ -20,11 +20,10 @@ public final class Plain {
                 case "added" -> result.append("Property '").append(diffs.get("key"))
                         .append("' was added with value: ")
                         .append(getComplexValue(diffs.get("newValue"))).append("\n");
-                case "updated" -> {
-                    result.append("Property '").append(diffs.get("key")).append("' was updated. From ")
-                            .append(getComplexValue(diffs.get("oldValue"))).append(" to ")
-                            .append(getComplexValue(diffs.get("newValue"))).append("\n");
-                }
+                case "updated" -> result.append("Property '").append(diffs.get("key")).append("' was updated. From ")
+                        .append(getComplexValue(diffs.get("oldValue"))).append(" to ")
+                        .append(getComplexValue(diffs.get("newValue"))).append("\n");
+
                 case "unchanged" -> result.append("");
                 default -> throw new IOException("Unknown format '" + diffs.get("status").toString() + "'");
             }
