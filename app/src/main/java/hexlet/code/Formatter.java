@@ -8,8 +8,12 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-
+@SuppressWarnings("java:S106")
 public class Formatter {
+    private Formatter() {
+        throw new IllegalStateException("Utility class formatter");
+    }
+
     public static String formatter(List<Map<String, Object>> differences, String format) throws IOException {
         switch (format) {
             case "stylish":
@@ -19,7 +23,7 @@ public class Formatter {
             case "json":
                 return Json.format(differences); // NewFormat JSON ->
             default:
-                System.out.println("Format" + format + "is not correct!");
+                System.out.println("Format '" + format + "' is not correct!");
         }
         return Stylish.format(differences);
     }
