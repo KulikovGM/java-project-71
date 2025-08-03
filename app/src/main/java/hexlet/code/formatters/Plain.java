@@ -1,15 +1,16 @@
 package hexlet.code.formatters;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-@SuppressWarnings("java:S1192")
 public final class Plain {
     private Plain() {
         throw new IllegalStateException("Utility class");
     }
-    public static String format(List<Map<String, Object>> differences) {
+
+    public static String format(List<Map<String, Object>> differences) throws IOException {
         StringBuilder result = new StringBuilder();
         for (Map<String, Object> diffs : differences) {
             switch (diffs.get("status").toString()) {
@@ -24,7 +25,8 @@ public final class Plain {
                             .append(getComplexValue(diffs.get("newValue"))).append("\n");
                     break;
                 }
-                default -> result.append(""); // Add case: 'unchanged' and default: exception
+                case "unchanged" -> result.append("");
+                default -> throw new IOException("Unknown format '" + diffs.get("status").toString() + "'");
             }
         }
         return result.toString().trim();
