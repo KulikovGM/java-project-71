@@ -11,9 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AppTest {
 
-    AppTest() throws IOException {
-        throw new IllegalStateException("Utility class");
-    }
+    AppTest() throws IOException {}
 
     private final Path formatStylish =
             Paths.get("src/test/resources/formatStylish.txt").toAbsolutePath().normalize();
