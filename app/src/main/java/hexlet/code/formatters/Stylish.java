@@ -4,7 +4,10 @@ import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("java:S1192")
-public class Stylish {
+public final class Stylish {
+    private Stylish() {
+        throw new IllegalStateException("Utility class");
+    }
     public static String format(List<Map<String, Object>> differences) {
         StringBuilder result = new StringBuilder("{\n");
         for (Map<String, Object> diffs : differences) {

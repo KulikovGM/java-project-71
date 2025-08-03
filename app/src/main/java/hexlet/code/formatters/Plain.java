@@ -5,7 +5,10 @@ import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("java:S1192")
-public class Plain {
+public final class Plain {
+    private Plain() {
+        throw new IllegalStateException("Utility class");
+    }
     public static String format(List<Map<String, Object>> differences) {
         StringBuilder result = new StringBuilder();
         for (Map<String, Object> diffs : differences) {
