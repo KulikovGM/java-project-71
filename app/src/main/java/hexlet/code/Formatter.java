@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("java:S106")
-public class Formatter {
+public final class Formatter {
     private Formatter() {
         throw new IllegalStateException("Utility class formatter");
     }

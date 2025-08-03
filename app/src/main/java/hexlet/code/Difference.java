@@ -8,6 +8,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
+@SuppressWarnings("java:S1192")
 public final class Difference {
 
     private Difference() {

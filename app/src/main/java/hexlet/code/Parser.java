@@ -6,12 +6,13 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 
-public class Parser {
-
+public final class Parser {
+    private Parser() {
+        throw new IllegalStateException("Utility class");
+    }
     public static Map<String, Object> parsing(String data, String format) throws IOException {
         ObjectMapper mapper;
         if (format.equals("json")) {
@@ -19,10 +20,10 @@ public class Parser {
         } else if (format.equals("yml")) {
             mapper = new YAMLMapper();
         } else {
-            throw new IOException("Unknown format");
+            throw new IOException("Unknown format '" + format + "'");
         }
 
-        Map<String, Object> mappedData = new HashMap<>();
+        Map<String, Object> mappedData;
         mappedData = mapper.readValue(new File(data), new TypeReference<>() {
         });
         return mappedData;
