@@ -1,4 +1,3 @@
-@Suppress("kotlin:S6624")
 plugins {
     application
     jacoco
@@ -27,6 +26,7 @@ repositories {
     mavenCentral()
 }
 
+@Suppress("kotlin:S6624")
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
