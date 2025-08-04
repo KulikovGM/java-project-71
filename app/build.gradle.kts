@@ -1,3 +1,4 @@
+@Suppress("kotlin:S6624")
 plugins {
     application
     jacoco
