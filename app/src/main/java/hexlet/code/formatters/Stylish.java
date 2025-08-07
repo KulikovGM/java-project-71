@@ -9,6 +9,7 @@ public final class Stylish {
     private Stylish() {
         throw new IllegalStateException("Utility class");
     }
+
     public static String format(List<Map<String, Object>> differences) throws IOException {
         StringBuilder result = new StringBuilder("{\n");
         for (Map<String, Object> diffs : differences) {
@@ -23,9 +24,7 @@ public final class Stylish {
                         .append(diffs.get("oldValue")).append("\n")
                         .append("  + ").append(diffs.get("key")).append(": ")
                         .append(diffs.get("newValue")).append("\n");
-                default -> {
-                    throw new IOException("Unknown format '" + diffs.get("status").toString() + "'");
-                }
+                default -> throw new IOException("Unknown format '" + diffs.get("status").toString() + "'");
             }
         }
         result.append("}");

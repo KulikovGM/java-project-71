@@ -26,77 +26,58 @@ class AppTest {
     private final String pathJson2 = "src/test/resources/file4.json";
 
     @Test
-    void testYmlDefault() {
-        try {
-            assertEquals(Files.readString(formatStylish), Differ.generate(pathYml1, pathYml2));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    void testYmlDefault() throws IOException {
+        String actual = Files.readString(formatStylish);
+        String expected = Differ.generate(pathYml1, pathYml2);
+        assertEquals(actual, expected);
     }
 
     @Test
-    void testYmlStylish() {
-        try {
-            assertEquals(Files.readString(formatStylish), Differ.generate(pathYml1, pathYml2));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    void testYmlStylish() throws IOException {
+        String actual = Files.readString(formatStylish);
+        String expected = Differ.generate(pathYml1, pathYml2, "stylish");
+        assertEquals(actual, expected);
     }
 
     @Test
-    void testYmlPlain() {
-        try {
-            assertEquals(Files.readString(formatPlain), Differ.generate(pathYml1, pathYml2, "plain"));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private final String expectedYml2Json = Files.readString(formatJson);
-
-    @Test
-    void testYmlJson() {
-        try {
-            assertEquals(expectedYml2Json, Differ.generate(pathYml1, pathYml2, "json"));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    void testYmlPlain() throws IOException {
+        String actual = Files.readString(formatPlain);
+        String expected = Differ.generate(pathYml1, pathYml2, "plain");
+        assertEquals(actual, expected);
     }
 
     @Test
-    void testJsonDefault() {
-        try {
-            assertEquals(Files.readString(formatStylish), Differ.generate(pathJson1, pathJson2));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    void testYmlJson() throws IOException {
+        String actual = Files.readString(formatJson);
+        String expected = Differ.generate(pathYml1, pathYml2, "json");
+        assertEquals(actual, expected);
     }
 
     @Test
-    void testJsonStylish() {
-        try {
-            assertEquals(Files.readString(formatStylish), Differ.generate(pathJson1, pathJson2));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    void testJsonDefault() throws IOException {
+        String actual = Files.readString(formatStylish);
+        String expected = Differ.generate(pathJson1, pathJson2);
+        assertEquals(actual, expected);
     }
 
     @Test
-    void testJsonPlain() {
-        try {
-            assertEquals(Files.readString(formatPlain), Differ.generate(pathJson1, pathJson2, "plain"));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    void testJsonStylish() throws IOException {
+        String actual = Files.readString(formatStylish);
+        String expected = Differ.generate(pathJson1, pathJson2, "stylish");
+        assertEquals(actual, expected);
     }
 
     @Test
-    void testJson() {
-        try {
-            assertEquals(Files.readString(formatJson), Differ.generate(pathJson1, pathJson2, "json"));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    void testJsonPlain() throws IOException {
+        String actual = Files.readString(formatPlain);
+        String expected = Differ.generate(pathJson1, pathJson2, "plain");
+        assertEquals(actual, expected);
     }
 
+    @Test
+    void testJson() throws IOException {
+        String actual = Files.readString(formatJson);
+        String expected = Differ.generate(pathJson1, pathJson2, "json");
+        assertEquals(actual, expected);
+    }
 }
