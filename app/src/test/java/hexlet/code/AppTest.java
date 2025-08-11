@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -14,16 +15,24 @@ class AppTest {
     AppTest() throws IOException {
     }
 
-    private final Path formatStylish =
-            Paths.get("src/test/resources/formatStylish.txt").toAbsolutePath().normalize();
-    private final Path formatPlain =
-            Paths.get("src/test/resources/formatPlain.txt").toAbsolutePath().normalize();
-    private final Path formatJson =
-            Paths.get("src/test/resources/resultJson.txt").toAbsolutePath().normalize();
-    private final String pathYml1 = "src/test/resources/fileYml3.yml";
-    private final String pathYml2 = "src/test/resources/fileYml4.yml";
-    private final String pathJson1 = "src/test/resources/file3.json";
-    private final String pathJson2 = "src/test/resources/file4.json";
+    private static Path formatStylish;
+    private static Path formatPlain;
+    private static Path formatJson;
+    private static String pathYml1;
+    private static String pathYml2;
+    private static String pathJson1;
+    private static String pathJson2;
+
+    @BeforeAll
+    public static void beforeAll() throws IOException {
+        formatStylish = Paths.get("src/test/resources/formatStylish.txt").toAbsolutePath().normalize();
+        formatPlain = Paths.get("src/test/resources/formatPlain.txt").toAbsolutePath().normalize();
+        formatJson = Paths.get("src/test/resources/resultJson.txt").toAbsolutePath().normalize();
+        pathYml1 = "src/test/resources/fileYml3.yml";
+        pathYml2 = "src/test/resources/fileYml4.yml";
+        pathJson1 = "src/test/resources/file3.json";
+        pathJson2 = "src/test/resources/file4.json";
+    }
 
     @Test
     void testYmlDefault() throws IOException {
