@@ -108,8 +108,8 @@ class AppTest {
     void testUnknownFormat() throws IOException {
         boolean exceptionThrown = false;
         try {
-            Differ.generate(wrongPath, wrongPath, "unknown format");
-        } catch (IOException e) {
+            Differ.generate(pathJson1, pathJson2, "unknown format");
+        } catch (Exception e) {
             exceptionThrown = true;
         }
         assertTrue(exceptionThrown);

@@ -23,8 +23,7 @@ public final class Formatter {
             case "json":
                 return Json.format(differences);
             default:
-                System.out.println("Format '" + format + "' is not correct!");
+                throw new IOException("Unknown format '" + format + "'");
         }
-        return Stylish.format(differences);
     }
 }
