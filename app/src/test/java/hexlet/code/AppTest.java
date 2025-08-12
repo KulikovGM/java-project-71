@@ -94,10 +94,21 @@ class AppTest {
     }
 
     @Test
-    void testWrongPath() throws IOException {
+    void testWrongPathDiffer() throws IOException {
         boolean exceptionThrown = false;
         try {
             Differ.generate(wrongPath, wrongPath, "json");
+        } catch (IOException e) {
+            exceptionThrown = true;
+        }
+        assertTrue(exceptionThrown);
+    }
+
+    @Test
+    void testUnknownFormat() throws IOException {
+        boolean exceptionThrown = false;
+        try {
+            Differ.generate(wrongPath, wrongPath, "unknown format");
         } catch (IOException e) {
             exceptionThrown = true;
         }

@@ -21,7 +21,7 @@ public final class Formatter {
             case "plain":
                 return Plain.format(differences);
             case "json":
-                return Json.format(differences); // NewFormat JSON ->
+                return Json.format(differences);
             default:
                 System.out.println("Format '" + format + "' is not correct!");
         }
