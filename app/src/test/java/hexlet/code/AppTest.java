@@ -9,6 +9,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class AppTest {
 
@@ -22,9 +23,10 @@ class AppTest {
     private static String pathYml2;
     private static String pathJson1;
     private static String pathJson2;
+    private static String wrongPath;
 
     @BeforeAll
-    public static void beforeAll() throws IOException {
+    static void beforeAll() {
         formatStylish = Paths.get("src/test/resources/formatStylish.txt").toAbsolutePath().normalize();
         formatPlain = Paths.get("src/test/resources/formatPlain.txt").toAbsolutePath().normalize();
         formatJson = Paths.get("src/test/resources/resultJson.txt").toAbsolutePath().normalize();
@@ -32,6 +34,7 @@ class AppTest {
         pathYml2 = "src/test/resources/fileYml4.yml";
         pathJson1 = "src/test/resources/file3.json";
         pathJson2 = "src/test/resources/file4.json";
+        wrongPath = "src/file.json";
     }
 
     @Test
@@ -89,4 +92,16 @@ class AppTest {
         String expected = Differ.generate(pathJson1, pathJson2, "json");
         assertEquals(actual, expected);
     }
+
+    @Test
+    void testWrongPath() throws IOException {
+        boolean exceptionThrown = false;
+        try {
+            Differ.generate(wrongPath, wrongPath, "json");
+        } catch (IOException e) {
+            exceptionThrown = true;
+        }
+        assertTrue(exceptionThrown);
+    }
+
 }
