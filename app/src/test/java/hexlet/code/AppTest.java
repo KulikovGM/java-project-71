@@ -92,7 +92,7 @@ class AppTest {
     }
 
     @Test
-    void testWrongPathDiffer() throws IOException {
+    void testWrongPathDiffer() {
         assertThrows(IOException.class, () -> {
             Differ.generate(wrongPath, wrongPath, "json");
             throw new IOException("Exception wrong path");
@@ -100,7 +100,7 @@ class AppTest {
     }
 
     @Test
-    void testUnknownFormat() throws IOException {
+    void testUnknownFormat() {
         assertThrows(IOException.class, () -> {
             Differ.generate(pathJson1, pathJson2, "unknown format");
             throw new IOException("Exception unknown format");
